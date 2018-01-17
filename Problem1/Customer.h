@@ -13,5 +13,10 @@ private:
 	string Address;
 	string Tel;
 	Date DateOfBirth;
+public:
+	void ChangeAddress(string newAddress);
+	void ChangeTelephone(string newTelephone);
+	void ChangeDateOfBirth(Date* newDate);
+	void PrintInfo();
 };
 
