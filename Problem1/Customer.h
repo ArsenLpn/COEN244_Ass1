@@ -18,5 +18,6 @@ public:
 	void ChangeTelephone(string newTelephone);
 	void ChangeDateOfBirth(Date* newDate);
 	void PrintInfo();
+	//did it work?
 };
 
