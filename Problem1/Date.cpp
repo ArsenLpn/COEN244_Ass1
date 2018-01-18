@@ -10,9 +10,7 @@ Date::Date()
 }
 Date::Date(int newDay, int newMonth, int newYear)
 {
-	Day = newDay;
-	Month = newMonth;
-	Year = newYear;
+	ChangeDate(newDay, newMonth, newYear);
 }
 
 

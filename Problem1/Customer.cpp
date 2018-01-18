@@ -5,7 +5,7 @@
 using namespace std;
 Customer::Customer()
 {
-	string dateOfBirth;
+	string dateOfBirth, tempStr;
 
 	cout << "\nEnter new customer's name: ";
 	cin >> Name;
@@ -17,9 +17,17 @@ Customer::Customer()
 	cin >> dateOfBirth;
 
 	//Convert string to Date obj.
+	int newDay, newMonth, newYear;
+	size_t length = 2;
+	tempStr = dateOfBirth.substr(2);
+	newDay = stoi(tempStr, &length);
+	tempStr = dateOfBirth.substr(3, 2);
+	newMonth = stoi(tempStr, &length);
+	tempStr = dateOfBirth.substr(6, 4);
+	length = 4;
+	newYear = stoi(tempStr, &length);
 
-
-	
+}
 
 
 Customer::~Customer()
