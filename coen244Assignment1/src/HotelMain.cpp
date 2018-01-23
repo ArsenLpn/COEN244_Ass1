@@ -17,11 +17,11 @@ int main(){
 	cout<<"\tHotel Reservation System 1.0\n\n\n"
 		<<*test;
 
-	test->printRoomsAvailability(1,1,1);
+	test->printRoomsAvailability(1,1,2018);
 	cout<<"Let's now make a reservation\n";
 	test->addReservation(30,1,2018,stayDuration,SUITE);
 	cout<<"Lets make another reservation\n";
-	test->addReservation(26,1,2018,3,REGULAR);
+	test->addReservation(26,1,2018,10,REGULAR);
 	test->printRoomsAvailability(30,1,2018);
 	//cout<<*test;
 	test->printCustomerReservation(30,1,2018);
