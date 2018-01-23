@@ -13,9 +13,10 @@ using namespace std;
 ostream& operator<<(ostream& out, const Room &r){
 
 	out //<< "\tRoom Information\n"
-		<<"Room number: "<<r.roomNb
-		<<".\nRoom Type: "<<r.roomType()
-		<<".\nAvailable: ";
+		<<"Room #"<<r.roomNb
+		<<".\nRoom Type: ";
+	r.getRoomType()?out<<"Suite.":out<<"Regular.";
+		out<<"\nAvailable: ";
 	r.available?out<<"Yes.\n":out<<"No.\n";
 	return out;
 }
@@ -60,9 +61,9 @@ bool Room::isAvailable()const
 {
 	return available;
 }
-string Room::roomType()const
+bool Room::getRoomType()const
 {
-	return isSuite?"Suite":"Regular";
+	return isSuite;
 }
 void Room::printRoomInfo()const{
 	cout<<*this;

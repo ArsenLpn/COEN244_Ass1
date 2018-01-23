@@ -16,14 +16,15 @@ using namespace std;
 int Reservation::totalReservation = 0;
 ostream& operator<<(ostream &out, const Reservation &R){
 
-	out <<"#########################################\n"
-		<< "\tReservation Information\n\nReservation number: "
+	out <<"####################################################\n"
+		<< "\tReservation Information\n\nReservation #"
 		<< R.reservationNb
 		<<"\nBy customer: \n" <<*R.customer<<'\n'
 		<<*R.room
 		<<"Arrival Date: "<<*R.arrivalDate
-		<<"\nStay duration: "<<R.stayDuration<<" days.\n"
-		<<"#########################################\n";
+		<<"\nStay duration: "<<R.stayDuration<<" day";
+		R.stayDuration>1?out<<"s.\n":out<<".\n";
+	out <<"####################################################\n";
 	return out;
 }
 Reservation::Reservation(string name, string address, string tel, int stayDuration){
@@ -59,11 +60,17 @@ void Reservation::resetTotalReservation(){
 int Reservation::getRoomNumber()const{
 	return this->room->getRoomNumber();
 }
+void Reservation::setRoomNumber(int roomNb){
+	this->room->setRoomNb(roomNb);
+}
 int Reservation::getStayDuration()const{
 	return stayDuration;
 }
 bool Reservation::getRoomAvailability()const{
 	return room->isAvailable();
+}
+bool Reservation::getRoomType()const{
+	return room->getRoomType();
 }
 string Reservation::getCustomerName()const{
 	return customer->getName();

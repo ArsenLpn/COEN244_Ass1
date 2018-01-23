@@ -28,16 +28,20 @@ public:
 				string="customerTelephone",int=1);//done
 	~Reservation();//done
 	void setArrivalDate(int ,int ,int);//done
-
 	void setRoom(int, bool, bool);//done
-	void setRoom( Room&);
+	void setRoom( Room&);//done
+	void setRoomNumber(int);//done
 	void setStayDuration(int);//done
 	void setCustomerInfo(string, string, string, int, int, int);//done
-	void resetTotalReservation();//done
+
 	int getRoomNumber()const;//done
 	int getStayDuration()const;
 	bool getRoomAvailability()const;
+	bool getRoomType()const;
 	string getCustomerName()const;//done
+
+
+	void resetTotalReservation();//done
 	void printReservationInfo()const;//done
 	Date& getArrivalDate();
 };

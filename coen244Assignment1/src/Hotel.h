@@ -38,23 +38,20 @@ public:
 	string getHotelAddress()const;//done
 	int getNbOfRooms()const;//done
 	/*############################################################*/
-	void printRoomsAvailability(int,int,int)const;//on given day,month,year
-	void printCustomerReservation(int,int,int)const;//day,month,year
-	void printCustomerRegularReservation(int,int,int)const;//day,month,year, time frame
-	void printCustomerSuiteReservation(int,int,int)const;//given time frame
+	void printRoomsAvailability(int,int,int);//on given day,month,year //done
+	void printCustomerReservation(int,int,int);//day,month,year
+	void printCustomerRegularReservation(int,int,int);//day,month,year, time frame
+	void printCustomerSuiteReservation(int,int,int);//given time frame
 	void printCustomerStayLongerThan(int)const;//
 
 	void printHotelInfo(){cout<<*this;};//...
 	/*#############################################################*//*TO DO*/
-	int isFull(bool);//-1 if full, else index of first available room //
+	bool isFull();//-1 if full, else index of first available room //done
 
 
 	//Reservation related functions
-	void addReservation(int d, int m, int y, int duration, bool isSuite);
-	void cancelReservation();//may create dangling pointers
-	void updateReservationAttributes(string,string,string,int);
-	void updateReservationLength(int);
-	int getRoomNumber()const;
+	void addReservation(int d, int m, int y, int duration, bool isSuite);//done
+	void cancelReservation(string customerName);//done
 
 	//Room related functions
 	void updateRoomAttributes(int,bool,bool);

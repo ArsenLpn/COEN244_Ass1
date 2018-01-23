@@ -36,10 +36,10 @@ void Customer::setDate(int day, int month, int year){
 }
 ostream& operator <<(ostream &out, const Customer &c){
 
-	out << "Name: "<< c.name
-			<<"\nAddress: " << c.address
-			<<"\nTelephone: " << c.tel
-			<<"\nDate of birth: " << *c.dateOfBirth << endl;
+	out <<"\tName: "<< c.name
+		<<"\n\tAddress: " << c.address
+		<<"\n\tTelephone: " << c.tel
+		<<"\n\tDate of birth: " << *c.dateOfBirth;
 	return out;
 }
 void Customer::printCustomerInfo() const{

@@ -31,7 +31,7 @@ public:
 	int getRoomNumber() const;
 
 	bool isAvailable() const;
-	string roomType() const;
+	bool getRoomType() const;
 	void printRoomInfo()const ;
 
 };
