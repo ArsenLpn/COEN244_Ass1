@@ -260,7 +260,9 @@ void Hotel::printCustomerStayLongerThan(int duration)const{
 		}
 	cout<<"****************************************************\n";
 }
+void Hotel::updateRoomAttributes(int roomNumber,bool availability, bool isSuite){
 
+}
 
 
 
