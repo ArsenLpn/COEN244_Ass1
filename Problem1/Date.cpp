@@ -19,15 +19,15 @@ Date::~Date()
 }
 
 
-void Date::ChangeDate(int newDay, int newMonth, int newYear)
+void Date::ChangeDate(int Day, int Month, int Year)
 {
-	Day = newDay;
-	Month = newMonth;
-	Year = newYear;
+	this->Day = Day;
+	this->Month = Month;
+	this->Year = Year;
 }
 
 
 void Date::PrintDate()
 {
-	cout << Day << "//" << Month << "//" << Year;
+	cout << Day << "/" << Month << "/" << Year;
 }
