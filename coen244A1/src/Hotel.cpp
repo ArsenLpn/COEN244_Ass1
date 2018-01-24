@@ -182,7 +182,7 @@ void Hotel::cancelReservation(string custName){
 	rooms[iterator->getRoomNumber()].setAvailability(true);
 	rList.erase(iterator);
 	cout<<"Reservation deleted.\n";
-
+//CHANGEES
 }
 void Hotel::printRoomsAvailability(int day, int month, int year){
 
