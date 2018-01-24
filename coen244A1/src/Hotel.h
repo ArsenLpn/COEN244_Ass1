@@ -43,9 +43,9 @@ public:
 	void printCustomerReservation(int,int,int);//day,month,year //done
 	void printCustomerRegularReservation(int,int,int,bool = false);//day,month,year, time frame // done
 	void printCustomerSuiteReservation(int,int,int);//given time frame /done
-	void printCustomerStayLongerThan(int)const;//
+	void printCustomerStayLongerThan(int)const;//DONE
 
-	void printHotelInfo(){cout<<*this;};//...
+	void printHotelInfo(){cout<<*this;};//done
 
 	bool isFull();//-1 if full, else index of first available room //done
 
