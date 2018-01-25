@@ -19,11 +19,11 @@ Date::~Date()
 }
 
 
-void Date::ChangeDate(int Day, int Month, int Year)
+void Date::ChangeDate(int newDay, int newMonth, int newYear)
 {
-	this->Day = Day;
-	this->Month = Month;
-	this->Year = Year;
+	Day = newDay;
+	Month = newMonth;
+	Year = newYear;
 }
 
 

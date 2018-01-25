@@ -12,7 +12,7 @@ private:
 	string Name;
 	string Address;
 	string Tel;
-	Date DateOfBirth;
+	Date *DateOfBirth;
 public:
 	void ChangeAddress(string newAddress);
 	void ChangeTelephone(string newTelephone);

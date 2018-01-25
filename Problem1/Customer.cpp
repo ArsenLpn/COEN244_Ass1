@@ -5,6 +5,7 @@
 using namespace std;
 Customer::Customer()
 {
+	this->DateOfBirth = new Date();
 	//string dateOfBirth, tempStr;									//For alternative dateOfBirth registration
 	int newDay, newMonth, newYear;
 
@@ -23,7 +24,7 @@ Customer::Customer()
 	cout << "\tEnter Year: ";
 	cin >> newYear;
 	cout << endl;
-	this->DateOfBirth.ChangeDate(newDay, newMonth, newYear);
+	this->DateOfBirth->ChangeDate(newDay, newMonth, newYear);
 	
 	
 	//Convert string to Date obj.									//Alternative dateOfBirth registration
@@ -58,7 +59,7 @@ void Customer::ChangeTelephone(string newTelephone)
 
 void Customer::ChangeDateOfBirth(Date* newDate)
 {
-	this->DateOfBirth = *newDate;
+	this->DateOfBirth = newDate;
 }
 
 
@@ -68,6 +69,6 @@ void Customer::PrintInfo()
 	cout << "\n\tName: " << this->Name;
 	cout << "\n\tAddress: " << this->Address;
 	cout << "\n\tTelephone: " << this->Tel;
-	cout << "\n\tDate of birth: ";this->DateOfBirth.PrintDate();
+	cout << "\n\tDate of birth: ";this->DateOfBirth->PrintDate();
 	cout << endl;
 }
