@@ -79,8 +79,9 @@ void Hotel::addReservation(int day, int month, int year , int duration, bool wan
 /*
  * Look through room array to find a matching room
  * chevk if there s a reservation on this room
- *       if yes check if datrs dont intergfere
- * add a reservation if no reservation
+ *       if yes check if dates
+			add reservation
+ * add a reservation if no existing reservation
  *
  * */
 
@@ -120,8 +121,6 @@ void Hotel::addReservation(int day, int month, int year , int duration, bool wan
 			}
 	//doing that for all rooms
 	//the resulting roomFound[] should represent all your available rooms for the time requested
-	/*for(int i=0;i<nbOfRoom;++i)
-		cout<<"roomFound "<<roomFound[i]<<'\n';*/
 	for(int i=0;i<nbOfRoom;++i)
 		if(roomFound[i]==1)
 		{//choosing first room
@@ -217,34 +216,56 @@ void Hotel::printRoomsAvailability(int day, int month, int year){
 	delete temp;
 	delete[] rAvailable;
 }
-void Hotel::printCustomerReservation(int day,int month,int year){
+void Hotel::printCustomerReservation(int bDay,int bMonth,int bYear,int eDay, int eMonth, int eYear){
+	/*
+	 *for each reservation
+	 *	if res date happens after bDate
+	 *	{
+	 *		if res date happes before eDate
+	 * 			print cust name
+	 * 	}
+	 * 	else if resDate happens before bDate// implicit
+	 * 		if resDate dateDif bDate <= resStay
+	 * 			print cust name
+	 *
+	 *That should cover all cases
+	 *
+	 * */
+	Date *bDate = new Date(bDay,bMonth,bYear);
+	Date *eDate = new Date(eDay,eMonth,eYear);
+
+
+	cout<<"****************************************************\n"
+		<<"Customer's that have reserved a room from " << *bDate<<" to "<<*eDate<<'\n';
+
+	for(list<Reservation>::iterator iterator=rList.begin(), end=rList.end();iterator!=end;++iterator)
+		if(iterator->getArrivalDate().compareDates(*bDate) >= 0)
+		{//0 if happens on same day, 1 if happens after
+			if(iterator->getArrivalDate().compareDates(*eDate) <=0)
+				//-1 if happens after
+				cout<<'\t'<<iterator->getCustomerName()<<'\n';
+		}
+		else if(iterator->getArrivalDate().dateDifferential(*bDate) <= iterator->getStayDuration())
+			cout<<'\t'<<iterator->getCustomerName()<<'\n';
+	cout<<"****************************************************\n";
+	delete bDate;
+	delete eDate;
+}
+void Hotel::printCustomerRegularReservation(int day,int month, int year,bool type){/*TIME INTERVAL, NOT SINGLE DATE*/
 	Date *temp = new Date(day,month,year);
 
 	cout<<"****************************************************\n"
-		<<"Customer's that have reserved a room on " << *temp<<endl;
+		<<"Customer's that have reserved a";
+	type?cout<<" Suite":cout<<" Regular";
+	cout<<" on " << *temp<<endl;
 	for(list<Reservation>::iterator iterator=rList.begin(), end=rList.end();iterator!=end;++iterator)
-		if(iterator->getArrivalDate().dateDifferential(*temp)<= iterator->getStayDuration() && iterator->getArrivalDate().dateDifferential(*temp) >= 0)
-			cout<<'\t'<<iterator->getCustomerName()<<'\n';
-		else if(temp->dateDifferential(iterator->getArrivalDate()) > iterator->getStayDuration())
-			cout<<'\t'<<iterator->getCustomerName()<<'\n';
+		if(iterator->getArrivalDate().dateDifferential(*temp)<= iterator->getStayDuration() && iterator->getRoomType()==type)
+			if(iterator->getArrivalDate().dateDifferential(*temp)>0)
+				cout<<'\t'<<iterator->getCustomerName()<<'\n';
 	cout<<"****************************************************\n";
 	delete temp;
 }
-void Hotel::printCustomerRegularReservation(int day,int month, int year,bool type){
-	Date *temp = new Date(day,month,year);
-
-		cout<<"****************************************************\n"
-			<<"Customer's that have reserved a";
-		type?cout<<" Suite":cout<<" Regular";
-		cout<<" on " << *temp<<endl;
-		for(list<Reservation>::iterator iterator=rList.begin(), end=rList.end();iterator!=end;++iterator)
-			if(iterator->getArrivalDate().dateDifferential(*temp)<= iterator->getStayDuration() && iterator->getRoomType()==type)
-				if(iterator->getArrivalDate().dateDifferential(*temp)>0)
-					cout<<'\t'<<iterator->getCustomerName()<<'\n';
-		cout<<"****************************************************\n";
-		delete temp;
-}
-void Hotel::printCustomerSuiteReservation(int day,int month,int year){
+void Hotel::printCustomerSuiteReservation(int day,int month,int year){/*TIME INTERVAL, NOT SINGLE DATE*/
 	this->printCustomerRegularReservation(day,month,year,SUITE);
 }
 void Hotel::printCustomerStayLongerThan(int duration)const{
@@ -259,9 +280,6 @@ void Hotel::printCustomerStayLongerThan(int duration)const{
 			iterator->getStayDuration()>1?cout<<" days.\n":cout<<" day.\n";
 		}
 	cout<<"****************************************************\n";
-}
-void Hotel::updateRoomAttributes(int roomNumber,bool availability, bool isSuite){
-
 }
 
 

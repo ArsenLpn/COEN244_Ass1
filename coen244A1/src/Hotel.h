@@ -40,36 +40,14 @@ public:
 	int getNbOfRooms()const;//done
 
 	void printRoomsAvailability(int,int,int);//on given day,month,year //done
-	void printCustomerReservation(int,int,int);//day,month,year //done
-	void printCustomerRegularReservation(int,int,int,bool = false);//day,month,year, time frame // done
-	void printCustomerSuiteReservation(int,int,int);//given time frame /done
+	void printCustomerReservation(int,int,int,int,int,int);//time frame
+	void printCustomerRegularReservation(int,int,int,bool = false);//time frame
+	void printCustomerSuiteReservation(int,int,int);//time frame
 	void printCustomerStayLongerThan(int)const;//DONE
-
 	void printHotelInfo(){cout<<*this;};//done
-
 	bool isFull();//-1 if full, else index of first available room //done
-
-
-	//Reservation related functions
 	void addReservation(int d, int m, int y, int duration, bool isSuite);//done
 	void cancelReservation(string customerName);//done
-
-	//Room related functions
-	void updateRoomAttributes(int,bool,bool);
-	void updateRoomNumber(int);//
-	void updateRoomAvailability(bool);
-	void updateRoomType(bool);
-
-	//Customer related functions
-	void updateCustomerAttributes(string,string,string,int,int,int);
-	void updateCustomerName(string);
-	void updateCustomerAddress(string);
-	void updateCustomerTel(string);
-	void updateCustomerDateOfBirth(int,int,int);
-	string getCustomerName()const;
-
-
-
 };
 
 #endif /* HOTEL_H_ */
