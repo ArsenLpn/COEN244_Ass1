@@ -5,6 +5,21 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Problem1", "Problem1\Problem1.vcxproj", "{86BDA4AE-D3C9-4C7B-ACC1-784C6BF70CB4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BB69B346-39E3-4EC6-8C5E-9DDB8A774DE5}"
+	ProjectSection(SolutionItems) = preProject
+		coen244A1\src\Customer.cpp = coen244A1\src\Customer.cpp
+		coen244A1\src\Customer.h = coen244A1\src\Customer.h
+		coen244A1\src\Date.cpp = coen244A1\src\Date.cpp
+		coen244A1\src\Date.h = coen244A1\src\Date.h
+		coen244A1\src\Hotel.cpp = coen244A1\src\Hotel.cpp
+		coen244A1\src\Hotel.h = coen244A1\src\Hotel.h
+		coen244A1\src\HotelMain.cpp = coen244A1\src\HotelMain.cpp
+		coen244A1\src\Reservation.cpp = coen244A1\src\Reservation.cpp
+		coen244A1\src\Reservation.h = coen244A1\src\Reservation.h
+		coen244A1\src\Room.cpp = coen244A1\src\Room.cpp
+		coen244A1\src\Room.h = coen244A1\src\Room.h
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
