@@ -25,8 +25,8 @@ ostream& operator<<(ostream &out, const Hotel &T){
 		<<"\nThere ";
 		T.rList.size()>1? out<<"are ":out<<"is ";
 	    out<<"currently "<<T.rList.size();
-		T.rList.size()>1? out<<" reservations.":out<<" reservation."
-		<<"\n####################################################\n";
+		T.rList.size()>1? out<<" reservations.":out<<" reservation.";
+		out<<"\n####################################################\n";
 
 
 	return out;
@@ -234,7 +234,6 @@ void Hotel::printCustomerReservation(int bDay,int bMonth,int bYear,int eDay, int
 	Date *bDate = new Date(bDay,bMonth,bYear);
 	Date *eDate = new Date(eDay,eMonth,eYear);
 
-
 	cout<<"****************************************************\n"
 		<<"Customer's that have reserved a room from " << *bDate<<" to "<<*eDate<<'\n';
 
@@ -251,22 +250,31 @@ void Hotel::printCustomerReservation(int bDay,int bMonth,int bYear,int eDay, int
 	delete bDate;
 	delete eDate;
 }
-void Hotel::printCustomerRegularReservation(int day,int month, int year,bool type){/*TIME INTERVAL, NOT SINGLE DATE*/
-	Date *temp = new Date(day,month,year);
+void Hotel::printCustomerRegularReservation(int bDay,int bMonth,int bYear,int eDay, int eMonth, int eYear,bool type){
+	Date *bDate = new Date(bDay,bMonth,bYear);
+	Date *eDate = new Date(eDay,eMonth,eYear);
 
 	cout<<"****************************************************\n"
 		<<"Customer's that have reserved a";
 	type?cout<<" Suite":cout<<" Regular";
-	cout<<" on " << *temp<<endl;
+	cout<<" room from " << *bDate<<" to "<<*eDate<<'\n';
+
 	for(list<Reservation>::iterator iterator=rList.begin(), end=rList.end();iterator!=end;++iterator)
-		if(iterator->getArrivalDate().dateDifferential(*temp)<= iterator->getStayDuration() && iterator->getRoomType()==type)
-			if(iterator->getArrivalDate().dateDifferential(*temp)>0)
+		if(iterator->getRoomType() == type)
+			if(iterator->getArrivalDate().compareDates(*bDate) >= 0)
+			{//0 if happens on same day, 1 if happens after
+				if(iterator->getArrivalDate().compareDates(*eDate) <=0)
+					//-1 if happens after
+					cout<<'\t'<<iterator->getCustomerName()<<'\n';
+			}
+			else if(iterator->getArrivalDate().dateDifferential(*bDate) <= iterator->getStayDuration())
 				cout<<'\t'<<iterator->getCustomerName()<<'\n';
 	cout<<"****************************************************\n";
-	delete temp;
+	delete bDate;
+	delete eDate;
 }
-void Hotel::printCustomerSuiteReservation(int day,int month,int year){/*TIME INTERVAL, NOT SINGLE DATE*/
-	this->printCustomerRegularReservation(day,month,year,SUITE);
+void Hotel::printCustomerSuiteReservation(int bDay,int bMonth,int bYear,int eDay, int eMonth, int eYear){/*TIME INTERVAL, NOT SINGLE DATE*/
+	this->printCustomerRegularReservation(bDay,bMonth,bYear,eDay,eMonth,eYear,SUITE);
 }
 void Hotel::printCustomerStayLongerThan(int duration)const{
 

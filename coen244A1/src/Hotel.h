@@ -25,7 +25,6 @@ class Hotel{
 	list<Reservation> rList;
 	Room *rooms;
 	void initRooms(bool printInfo);//helper fct for rooms initialization  //done
-
 public:
 	Hotel(string="hotelName",string="hotelAddress",string="1234567890",bool = false);//done
 	~Hotel();/*TO DO*/
@@ -40,9 +39,9 @@ public:
 	int getNbOfRooms()const;//done
 
 	void printRoomsAvailability(int,int,int);//on given day,month,year //done
-	void printCustomerReservation(int,int,int,int,int,int);//time frame
-	void printCustomerRegularReservation(int,int,int,bool = false);//time frame
-	void printCustomerSuiteReservation(int,int,int);//time frame
+	void printCustomerReservation(int,int,int,int,int,int);//time frame //done
+	void printCustomerRegularReservation(int,int,int,int,int,int,bool = false);//time frame
+	void printCustomerSuiteReservation(int,int,int,int,int,int);//time frame
 	void printCustomerStayLongerThan(int)const;//DONE
 	void printHotelInfo(){cout<<*this;};//done
 	bool isFull();//-1 if full, else index of first available room //done
