@@ -2,7 +2,7 @@
 class Room
 {
 public:
-	Room(int Number, bool Available, bool Style);
+	Room(int=1, bool=1, bool=0);				////Style: 0 = regular, 1 = suit
 	~Room();
 private:
 	int Number;

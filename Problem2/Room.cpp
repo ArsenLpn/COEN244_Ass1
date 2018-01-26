@@ -2,8 +2,9 @@
 #include "Room.h"
 
 using namespace std;
-Room::Room(int Number=0,bool Available=1,bool Style=0)
+Room::Room(int Number,bool Available,bool Style)
 {
+	//Style: 0 = regular, 1 = suit
 	this->Number = Number;
 	this->Available = Available;
 	this->Style = Style;
@@ -29,5 +30,8 @@ bool Room::ReturnCategory()
 
 void Room::PrintInfo()
 {
-	cout<<"\nRoom information:"<<"\n\tNumber: "<<this->Number<<"\n\tType: "<<(this->Style)?""
+	cout << "\nRoom information:"
+		<<"\n\tNumber: " <<this->Number 
+		<<"\n\tType: " <<(this->Style ? "Regular" : "Suit") 
+		<<(this->Available ? "Available" : "Occupied");
 }
