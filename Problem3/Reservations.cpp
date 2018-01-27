@@ -2,9 +2,13 @@
 #include "Reservations.h"
 
 
-Reservations::Reservations()
+Reservations::Reservations()							//Cunstructor ...dome
 {
-	Reservation = 0;
+	customer = new Customer();
+	room = new Room();
+	reservation = 0;
+	durration = 0;
+
 }
 
 
