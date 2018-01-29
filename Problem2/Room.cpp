@@ -35,3 +35,8 @@ void Room::PrintInfo()
 		<<"\n\tType: " <<(this->Style ? "Regular" : "Suit") 
 		<<(this->Available ? "Available" : "Occupied");
 }
+
+int Room::GetNumber()
+{
+	return this->Number;
+}

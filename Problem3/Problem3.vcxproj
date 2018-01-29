@@ -74,6 +74,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -100,10 +101,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalUsingDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -156,6 +160,14 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Problem1\Problem1.vcxproj">
+      <Project>{86bda4ae-d3c9-4c7b-acc1-784c6bf70cb4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Problem2\Problem2.vcxproj">
+      <Project>{b169260c-deeb-4552-bddd-e561a72cf2c7}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

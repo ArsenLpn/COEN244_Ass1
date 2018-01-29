@@ -12,19 +12,30 @@ Customer::Customer()
 	cout << "Enter new customer's name: ";							//Prompt user for Custmer' types
 	cin >> Name;
 	cout.flush();
-	cout << "Enter customer's address:  ";
-	cin >> Address;
-	cout << "Enter customer's phone number: ";
-	cin >> Tel;
-	cout << "Enter customer's date of birth: " << endl;
-	cout << "\tEnter day: ";
-	cin >> newDay;
-	cout << "\tEnter month: ";
-	cin >> newMonth;
-	cout << "\tEnter Year: ";
-	cin >> newYear;
-	cout << endl;
-	this->DateOfBirth->ChangeDate(newDay, newMonth, newYear);
+
+	if (this->Name!="default")
+	{
+		cout << "Enter customer's address:  ";
+		cin >> Address;
+		cout << "Enter customer's phone number: ";
+		cin >> Tel;
+		cout << "Enter customer's date of birth: " << endl;
+		cout << "\tEnter day: ";
+		cin >> newDay;
+		cout << "\tEnter month: ";
+		cin >> newMonth;
+		cout << "\tEnter Year: ";
+		cin >> newYear;
+		cout << endl;
+		this->DateOfBirth->ChangeDate(newDay, newMonth, newYear);
+	}
+	else
+	{
+		this->Name = "Jane Dow";
+		this->Address = "here";
+		this->Tel = "123-4567";
+		this->DateOfBirth->ChangeDate(6,6,2000);
+	}
 	
 	
 	//Convert string to Date obj.									//Alternative dateOfBirth registration
@@ -71,4 +82,8 @@ void Customer::PrintInfo()
 	cout << "\n\tTelephone: " << this->Tel;
 	cout << "\n\tDate of birth: ";this->DateOfBirth->PrintDate();
 	cout << endl;
+}
+string Customer::GetName()
+{
+	return this->Name;
 }
