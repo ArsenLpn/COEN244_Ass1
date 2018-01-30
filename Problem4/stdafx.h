@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <string>
 #include <list>
+#include <vector>
 
 //classses from previous problems
 #include"Room.h"

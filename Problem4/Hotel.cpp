@@ -13,17 +13,17 @@ Hotel::~Hotel()
 }
 
 
-void Hotel::RoomGet(Date Date)
+void Hotel::RoomGet(Date *Date)
 {
 }
 
 
-void Hotel::CustomersGet(Date nDate)
+void Hotel::CustomersGet(Date *nDate)
 {
 }
 
 
-void Hotel::CustomersGet(Date sDate, Date eDate, bool rStyle)
+void Hotel::CustomersGet(Date*sDate, Date*eDate, bool rStyle)
 {
 }
 
