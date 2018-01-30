@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{EF647174-494E-482E-97E0-0B848DAC8E76}</ProjectGuid>
+    <ProjectGuid>{A5F59A8D-D0A1-47D0-A8CE-1F9BE3357087}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>Problem3</RootNamespace>
+    <RootNamespace>Problem4</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -39,7 +39,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -74,7 +74,6 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <SourcePath>$(SourcePath)</SourcePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -88,7 +87,6 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Assignement1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Assignement1\Problem1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -101,14 +99,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalUsingDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <ShowIncludes>false</ShowIncludes>
+      <AdditionalIncludeDirectories>..\Problem3;..\Problem2;..\Problem1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Ass1\Problem1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -119,7 +114,6 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Assignement1\Problem2;C:\Users\Arseniy\Documents\Visual Studio 2015\Projects\COEN244_Assignement1\Problem1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -148,27 +142,19 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Reservations.h" />
+    <ClInclude Include="Hotel.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Problem3.cpp" />
-    <ClCompile Include="Reservations.cpp" />
+    <ClCompile Include="Hotel.cpp" />
+    <ClCompile Include="Problem4.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Problem1\Problem1.vcxproj">
-      <Project>{86bda4ae-d3c9-4c7b-acc1-784c6bf70cb4}</Project>
-    </ProjectReference>
-    <ProjectReference Include="..\Problem2\Problem2.vcxproj">
-      <Project>{b169260c-deeb-4552-bddd-e561a72cf2c7}</Project>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

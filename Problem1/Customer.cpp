@@ -13,7 +13,7 @@ Customer::Customer()
 	cin >> Name;
 	cout.flush();
 
-	if (this->Name!="default")
+	if (this->Name!="-1")											//to have a default set for testing
 	{
 		cout << "Enter customer's address:  ";
 		cin >> Address;
