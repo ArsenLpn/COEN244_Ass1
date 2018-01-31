@@ -14,11 +14,13 @@ public:
 	string GetCustomerName();
 	void PrintInfo();
 	~Reservations();
+
 private:
 	int reservation;
 	Customer *customer;
 	Room *room;
 	int durration;
+	//int static resefvationsCount;
 
 };
 
