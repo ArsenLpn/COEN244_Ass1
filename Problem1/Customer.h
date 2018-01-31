@@ -7,6 +7,7 @@ class Customer
 {
 public:
 	Customer();
+	Customer(string name, string address, string tel, int day, int month, int year);
 	void ChangeAddress(string newAddress);
 	void ChangeTelephone(string newTelephone);
 	void ChangeDateOfBirth(Date* newDate);

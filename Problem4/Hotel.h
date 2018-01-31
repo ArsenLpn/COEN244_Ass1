@@ -8,9 +8,9 @@ public:
 	Hotel();
 	void RoomGet(Date*Date);
 	void CustomersGet(Date*nDate);
-	void CustomersGet(Date*sDate, Date*eDate, bool rStyle);
+	void CustomersGet(Date*sDate, Date*eDate, bool rStyle);				//get the customers in the date range 
 	void CustomersGet(int stayDuration);
-	bool HotelFull();
+	bool HotelFull(Date gDate);
 	void PrintInfo();
 
 						/************************Getters and Setters********************/
@@ -30,9 +30,11 @@ private:
 	string address;
 	string tel;
 	int roomsAmount;
-	list<Room> roomsList;							//Looking for destructor of Room class
+
+	list<Room> roomsList;					//rooms list
 	list<Room>::iterator roomIter;
-	list<Reservations> reservationsList;
+
+	list<Reservations> reservationsList;	//reservations list
 	list<Reservations>::iterator resIter;
 };
 

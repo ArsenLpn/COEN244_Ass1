@@ -50,6 +50,14 @@ Customer::Customer()
 	this->DateOfBirth.ChangeDate(newDay, newMonth, newYear);*/
 }
 
+Customer::Customer(string name, string address, string tel, int day, int month, int year)
+{
+	this->Name = name;
+	this->Address = address;
+	this->Tel = tel;
+	this->DateOfBirth = new Date(day, month, year);
+}
+
 
 Customer::~Customer()
 {

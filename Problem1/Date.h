@@ -7,6 +7,10 @@ public:
 	~Date();
 	void ChangeDate(int day, int month, int year);
 	void PrintDate();
+
+	const int GetDay() { return this->Day; };
+	const int GetMonth() { return this->Month; };
+	const int GetYear() { return this->Year; };
 private:
 	int Day;
 	int Month;

@@ -7,7 +7,12 @@
 int main()
 {
 	//create new hotel
-	Hotel*hotelPtr = new Hotel();
+	cout << "\nCreating new hotel:";
+	Hotel*hotelPtr = new Hotel();					//constructor
+	Date*testDate = new Date(4, 1, 2000);
+
+	cout << "\n\nRunning RoomGet() to retrieve rooms ocupied on a given date.";
+	hotelPtr->RoomGet(testDate);
 
 
 	cout << "\nPress enter to exit";

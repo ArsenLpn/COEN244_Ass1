@@ -10,6 +10,14 @@ Reservations::Reservations()							//Constructor ...dome
 	durration = 0;
 
 }
+Reservations::Reservations(int reservID, int durration,Date *sDate,Room room)
+{
+	customer = new Customer("john", "there", "123", 5, 5, 2000);
+	this->reservation=reservID;
+	this->durration = durration;
+	this->startDate = sDate;
+	this->room = &room;
+}
 
 
 Reservations::~Reservations()
@@ -54,4 +62,9 @@ void Reservations::PrintInfo()										//Prints information stored in this rese
 	cout << endl;
 	this->room->PrintInfo();
 	cout << "\nFor the amount of " << this->durration << " day" << (this->durration == 1 ? "" : "s");
+}
+
+Date Reservations::GetDate()
+{
+	return *startDate;
 }
